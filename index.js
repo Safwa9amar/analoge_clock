@@ -19,5 +19,4 @@ let timeUpdate = function () {
 
 setInterval(() => {
   time.textContent = timeUpdate();
-  date.textContent ='Today is : ' + new Date();
 }, 1000);
