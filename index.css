@@ -1,0 +1,87 @@
+@font-face {
+  font-family: digitalClock;
+  src: url(fonts/Technology.ttf);
+}
+
+:root {
+  --clockBg: rgb(255, 255, 255);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: url(./img/background.jpg) no-repeat; */
+  background-position: center;
+  background-size: cover;
+}
+
+.digital-clock {
+  position: absolute;
+  bottom: 50%;
+  right: 30%;
+  transform: rotate(180deg);
+  padding: 5px;
+  letter-spacing: 3px;
+  font-family: digitalClock;
+}
+
+.analog-clock-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  transform: rotate(180deg);
+  background: url(img/clock-romane.png) var(--clockBg);
+  background-size: cover;
+}
+
+.hours,
+.minutes,
+.seconds {
+  height: 35%;
+  /*  */
+  position: absolute;
+  inset: 50%;
+  /*  */
+  transform-origin: top center;
+  transition: step-start 300ms;
+  /*  */
+  box-shadow: 0px 5px 7px 0px;
+  /* border-bottom-left-radius: 10px; */
+}
+.hours {
+  background-color: red;
+  width: 2%;
+}
+
+.minutes {
+  background-color: rgb(59, 39, 235);
+  width: 1%;
+}
+.seconds {
+  background-color: yellow;
+  width: 0.7%;
+}
+
+.seconds::before,
+.minutes::before,
+.hours::before {
+  content: "";
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  background: inherit;
+  top: -10px;
+}
+.parts-cover-circle {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-40%, -50%);
+  z-index: 1111;
+  background: rgb(0, 0, 0);
+  border-radius: 100%;
+  height: 5px;
+  width: 5px;
+}
